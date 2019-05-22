@@ -26,18 +26,22 @@ function greet(){
         result = Afrikaans + myNames
     }
   if(typeof(Storage) !== undefined) {
-    if (localStorage.greetingsCounter) {
-      localStorage.greetingsCounter = Number(localStorage.greetingsCounter)+1;
-    } else {
-      localStorage.greetingsCounter = 1;
-    }
-    greetingsElem.innerHTML = "You have clicked the button " + localStorage.greetingsCounter + " time(s).";
-  } 
-  if (namesGreeted[myNames] === undefined){
-    greetingsCounter++;
-    namesGreeted[myNames] = 0;
-}
+    if(namesGreeted[myNames] === undefined) {
+      greetBtn.addEventListener('click', function(){
+        if (localStorage[namesGreeted]){
+          greetingsCounter += greetingsCounter;
+          localStorage[namesGreeted] = greetingsCounter;
+          catsSpotted = Number(localStorage[namesGreeted]);
+      }
 
+    });
+      namesGreeted[myNames] = 0;
+      localStorage.greetingsCounter = Number(localStorage.greetingsCounter)+1;
+
+    }
+    greetingsElem.innerHTML =localStorage.greetingsCounter;
+    console.log(greetingsCounter)
+  }
   greetFinalElement.innerHTML = result
 }
 greetBtn.addEventListener('click', greet)
