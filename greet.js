@@ -33,9 +33,9 @@ function greet(){
     }
     greetingsElem.innerHTML = "You have clicked the button " + localStorage.greetingsCounter + " time(s).";
   } 
-  if (localStorage.namesGreeted[myNames] === undefined){
-    localStorage.greetingsCounter++;
-    localStorage.namesGreeted[myNames] = 0;
+  if (namesGreeted[myNames] === undefined){
+    greetingsCounter++;
+    namesGreeted[myNames] = 0;
 }
 
   greetFinalElement.innerHTML = result
